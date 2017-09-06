@@ -3,12 +3,13 @@
   "name": {
     "title": "miss",
     "first": "kelly",
-    "last": "shaw"
+    "last": "shaw",
+    "full": "Kelly Shaw"
   },
   "location": {
-    "street": "3284 w belt line rd",
-    "city": "burkburnett",
-    "state": "montana",
+    "street": "3284 W Belt Line Rd",
+    "city": "Burkburnett",
+    "state": "Montana",
     "zip": "18388"
   },
   "email": "kelly.shaw12@example.com",
