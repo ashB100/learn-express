@@ -5,7 +5,11 @@ var fs = require('fs');
 var path = require('path');
 var _ = require('lodash');
 var engines = require('consolidate');
-var helpers = require('./helpers');
+
+//var helpers = require('./helpers');
+
+var JSONStream = require('JSONStream');
+
 var bodyParser = require('body-parser');
 
 
@@ -27,9 +31,37 @@ app.get('*.json', function(req, res) {
 
 app.get('/data/:username', function(req, res) {
     var username = req.params.username;
-    var user = helpers.getUser(username);
+    
+    //var user = helpers.getUser(username);
+    var readable = fs.createReadStream('./users/' + username + '.json');
 
-    res.json(user);
+    //res.json(user);
+    readable.pipe(res);
+});
+
+app.get('/users/by/:gender', function(req, res) {
+    var gender = req.params.gender;
+    // Create a readable stream that reads the users.json
+    var readable = fs.createReadStream('users.json');
+
+    // Pipe it to JSONStream
+    // Call the parse method passing in '*' which means read in everything
+    // This will parse things into objects before it calls your callback.
+    // The callback function will get a user object and each user object 
+    // will go through this. We can filter them by gender.
+    // We need to pipe the objects back into strings because that is what we
+    // need to send to the browser. 
+    // You can tell JSONStream.stringify how to format the output string.
+    // Then finally we pipe it back to our response.
+    readable
+        .pipe(JSONStream.parse('*', function(user) {
+            if (user.gender === gender) {
+                // Can return just a property of user or the whole user
+                return user.name;
+            }
+        }))
+        .pipe(JSONStream.stringify('[\n  ', ',\n  ', '\n]\n'))
+        .pipe(res);
 });
 
 app.get('/', function(req, res) {
