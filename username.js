@@ -6,8 +6,16 @@ var router = express.Router({
     mergeParams: true
 });
 
-router.all('/', function(req, res, next) {
+/*router.all('/', function(req, res, next) {
     console.log(req.method, 'for', req.params.username);
+    next();
+}); */
+
+// You can use the use method and omit the path altogether, in this case
+// it will fire for every request that this route handles regardless of the 
+// path
+router.use(function(req, res, next) {
+    console.log(req.method, 'for', req.params.username, 'at ' + req.path);
     next();
 });
 
