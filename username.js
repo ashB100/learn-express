@@ -29,6 +29,11 @@ router.get('/', helpers.verifyUser, function(req, res) {
     });
 });
 
+router.use(function(err, req, res, next) {
+    console.log(err.stack);
+    res.status(500).send('Something broke!');
+});
+
 router.get('/edit', function (req, res) {
   res.send('You want to edit ' + req.params.username + '???')
 })
