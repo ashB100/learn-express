@@ -3,12 +3,13 @@
   "name": {
     "title": "mr",
     "first": "felix",
-    "last": "miles"
+    "last": "miles",
+    "full": "Felix Miles"
   },
   "location": {
-    "street": "9851 depaul dr",
-    "city": "portland",
-    "state": "new york",
+    "street": "9851 Depaul Dr",
+    "city": "Portland",
+    "state": "New Yorkfe",
     "zip": "53768"
   },
   "email": "felix.miles29@example.com",

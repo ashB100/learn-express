@@ -36,7 +36,7 @@ router.use(function(err, req, res, next) {
 
 router.get('/edit', function (req, res) {
   res.send('You want to edit ' + req.params.username + '???')
-})
+});
 
 router.put('/', function (req, res) {
   var username = req.params.username;

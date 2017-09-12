@@ -3,12 +3,13 @@
   "name": {
     "title": "mr",
     "first": "johnni",
-    "last": "franklin"
+    "last": "franklin",
+    "full": "Johnni Franklin"
   },
   "location": {
-    "street": "1459 e little york rd",
-    "city": "lincoln",
-    "state": "montana",
+    "street": "1459 E Little York Rd",
+    "city": "Lincoln",
+    "state": "Montanaqw",
     "zip": "17574"
   },
   "email": "johnni.franklin85@example.com",

@@ -3,12 +3,13 @@
   "name": {
     "title": "mr",
     "first": "joshua",
-    "last": "pearson"
+    "last": "pearson",
+    "full": "Joshua Pearson"
   },
   "location": {
-    "street": "3756 poplar dr",
-    "city": "scottsdale",
-    "state": "rhode island",
+    "street": "3756 Poplar Dr",
+    "city": "Scottsdalea",
+    "state": "Rhode Island",
     "zip": "21122"
   },
   "email": "joshua.pearson33@example.com",
